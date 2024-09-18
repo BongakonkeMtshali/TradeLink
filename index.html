@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TradeLink - Cross-border Trade</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-image: url('images/background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Splash Screen Styles */
+        .splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .splash-image {
+            width: 80%;
+            animation: fadeIn 1s ease-in-out infinite alternate;
+            margin: 0 5px;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .content-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .content-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: calc(50% - 20px);
+        }
+
+        .content-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .content-info {
+            padding: 15px;
+        }
+
+        .read-more {
+            display: inline-block;
+            margin-top: 10px;
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+        .content-detail {
+            display: none;
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .back-btn {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .back-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Navigation Bar Styles */
+        header {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px 0;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo h1 {
+            margin: 0;
+            color: white;
+        }
+
+        header nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        header nav ul li {
+            display: inline;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        header nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Resources Section */
+        .resources {
+            margin-top: 40px;
+        }
+
+        .resource-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Splash Screen -->
+    <div class="splash-screen" id="splash-screen">
+        <img src="images/splash1.jpg" class="splash-image" alt="Splash Image 1">
+        <img src="images/splash2.jpg" class="splash-image" alt="Splash Image 2">
+        <img src="images/splash3.jpg" class="splash-image" alt="Splash Image 3">
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>TradeLink</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="investment.html">Investment</a></li>
+                    <li><a href="videos.html">Videos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Content Grid -->
+        <section class="content-grid" id="content-grid">
+            <!-- Article 1 -->
+            <div class="content-card">
+                <img src="images/crossborder.jpg" alt="Cross-border Trade">
+                <div class="content-info">
+                    <h3>Cross-border Trade in Southern Africa</h3>
+                    <p>An in-depth look at the cross-border trade activities within Southern Africa and how they affect the economy.</p>
+                    <a href="#" class="read-more" onclick="toggleDetail('crossborder-detail')">Read More</a>
+                </div>
+            </div>
+
+            <!-- Article 2 -->
+            <div class="content-card">
+                <img src="images/impact.jpg" alt="Impact of COVID-19">
+                <div class="content-info">
+                    <h3>Impact of COVID-19 on Southern Africa</h3>
+                    <p>Exploring the effects of COVID-19 on trade, development, and human welfare in the region.</p>
+                    <a href="#" class="read-more" onclick="toggleDetail('impact-detail')">Read More</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Content -->
+        <section id="crossborder-detail" class="content-detail">
+            <h2>Cross-border Trade in Southern Africa</h2>
+            <img src="images/crossborder.jpg" alt="Cross-border Trade">
+            <p>Cross-border trade in Southern Africa plays a crucial role in the region's economy. The movement of goods across borders affects economic stability, growth, and regional integration. This detailed content explores the key aspects of cross-border trade, including major trade routes, the impact of trade policies, and the role of informal trade.</p>
+            <p>Trade routes in Southern Africa are vital for the exchange of goods, both within the region and with international partners. Major trade corridors connect landlocked countries with port cities, facilitating the export of minerals, agricultural products, and manufactured goods. The implementation of trade agreements, such as the African Continental Free Trade Area (AfCFTA), aims to enhance intra-regional trade and reduce barriers.</p>
+            <p>Trade policies and regulations significantly influence the flow of goods. Tariffs, customs procedures, and non-tariff barriers can either facilitate or hinder trade. Efforts to streamline customs processes and harmonize regulations are essential for improving trade efficiency and reducing costs.</p>
+            <p>Informal trade, often conducted through small-scale cross-border transactions, is also a significant aspect of the regional economy. Informal trade can contribute to poverty alleviation and economic empowerment, but it also poses challenges related to regulation and taxation.</p>
+            <p>Understanding the dynamics of cross-border trade helps policymakers and businesses navigate the complexities of the regional market. By addressing trade barriers and promoting economic integration, Southern Africa can enhance its economic growth and regional cooperation.</p>
+            <a href="#" class="back-btn" onclick="toggleDetail('crossborder-detail')">Back to Articles</a>
+        </section>
+
+        <section id="impact-detail" class="content-detail">
+            <h2>Impact of COVID-19 on Southern Africa</h2>
+            <img src="images/impact.jpg" alt="Impact of COVID-19">
+            <p>The COVID-19 pandemic has had a profound impact on Southern Africa, affecting various aspects of life and trade in the region. This comprehensive analysis explores the economic, social, and health impacts of the pandemic on Southern Africa.</p>
+            <p>Economically, the region faced significant challenges as lockdowns and restrictions disrupted trade and supply chains. Many businesses, particularly those reliant on international trade, struggled with reduced demand and logistical issues. The tourism sector, a crucial part of the regional economy, also saw dramatic declines in revenue as travel restrictions were imposed.</p>
+            <p>Socially, the pandemic exacerbated existing inequalities and placed additional stress on public health systems. The healthcare infrastructure struggled to cope with the surge in COVID-19 cases, and the region faced shortages of medical supplies and personnel. Educational institutions also had to adapt to new modes of teaching, impacting students' learning experiences.</p>
+            <p>In response, governments and organizations in Southern Africa have implemented various measures to mitigate the effects of the pandemic. These include economic stimulus packages, public health campaigns, and international aid efforts. The long-term recovery of the region will depend on the effectiveness of these measures and the ability to adapt to the ongoing challenges posed by the pandemic.</p>
+            <a href="#" class="back-btn" onclick="toggleDetail('impact-detail')">Back to Articles</a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 TradeLink - All Rights Reserved</p>
+    </footer>
+
+    <script>
+        // Hide splash screen after a delay
+        window.onload = function() {
+            setTimeout(function() {
+                document.getElementById('splash-screen').style.display = 'none';
+            }, 3000); // 3 seconds delay
+        };
+
+        function toggleDetail(sectionId) {
+            // Hide the content grid
+            document.getElementById('content-grid').style.display = 'none';
+
+            // Hide all detail sections
+            var sections = document.querySelectorAll('.content-detail');
+            sections.forEach(function(section) {
+                section.style.display = 'none'; // Hide all sections
+            });
+
+            // Show the selected section
+            document.getElementById(sectionId).style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>

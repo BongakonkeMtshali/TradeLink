@@ -1,0 +1,234 @@
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    background-image: url('images/background.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
+
+/* Container */
+.container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Header */
+header {
+    background: #004D40;
+    color: white;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo h1 {
+    font-size: 36px; /* Increased font size */
+    margin: 0;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Main Section */
+main {
+    flex: 1; 
+    display: flex;
+    margin: 20px 0;
+    gap: 20px;
+}
+
+/* Sidebar */
+.filter-sidebar {
+    flex: 1;
+    background: #f8f8f8;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.filter-sidebar h2 {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.filter-group {
+    margin-bottom: 20px;
+}
+
+.filter-group input, .filter-group select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.apply-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: #004D40;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.apply-btn:hover {
+    background: #00251A;
+}
+
+/* Content Grid */
+.content-grid {
+    flex: 3;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.content-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.content-card img {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: cover;
+}
+
+.content-info {
+    padding: 15px;
+}
+
+.content-info h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 10px;
+    color: #004D40;
+    text-decoration: none;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+/* Detailed Content */
+.content-detail {
+    display: none;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    background: #fff;
+}
+
+.content-detail img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.back-btn {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.back-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Footer */
+footer {
+    background: #004D40;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    margin-top: auto;
+}
+
+/* About and Contact Pages */
+.about-page, .contact-page {
+    background: rgba(27, 1, 1, 0.5); /* Slightly darkened background for better text contrast */
+    color: #222; /* Darker text color for improved readability */
+    padding: 20px;
+    border-radius: 8px;
+    font-weight: bold; /* Make text bold */
+    line-height: 1.5; /* Increase line height for better readability */
+    font-size: 1.1em; /* Slightly increase font size */
+}
+
+
+
+.about-page h1, .contact-page h1 {
+    font-size: 36px; /* Larger font size for headings */
+    margin-bottom: 20px;
+}
+
+.about-page p, .contact-page p {
+    font-size: 18px; /* Larger font size for paragraphs */
+    line-height: 1.8;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    header .logo h1 {
+        font-size: 28px; /* Adjust logo font size for smaller screens */
+    }
+}
